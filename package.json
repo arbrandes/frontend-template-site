@@ -27,6 +27,7 @@
   "dependencies": {
     "@edx/brand": "npm:@openedx/brand-openedx@^1.2.3",
     "@openedx/frontend-app-authn": "file:../frontend-app-authn/openedx-frontend-app-authn.tgz",
+    "@openedx/frontend-app-instruct": "file:../frontend-app-instruct/openedx-frontend-app-instruct.tgz",
     "@openedx/frontend-app-learner-dashboard": "file:../frontend-app-learner-dashboard/openedx-frontend-app-learner-dashboard.tgz",
     "@openedx/frontend-base": "file:../frontend-base/pack/openedx-frontend-base.tgz"
   },
