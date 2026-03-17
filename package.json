@@ -21,7 +21,7 @@
     "build:packages": "make build-packages",
     "clean:packages": "make clean-packages",
     "dev": "PORT=8080 openedx dev",
-    "dev:site": "npm run dev",
+    "dev:site": "make dev-site",
     "dev:packages": "make dev-packages",
     "clean": "make clean",
     "serve": "openedx serve"
