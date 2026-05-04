@@ -3,10 +3,24 @@ import { authnApp } from '@openedx/frontend-app-authn';
 import { instructorDashboardApp } from '@openedx/frontend-app-instructor-dashboard';
 import { learnerDashboardApp } from '@openedx/frontend-app-learner-dashboard';
 import { notificationsApp } from '@openedx/frontend-app-notifications';
+import { createLegacyPluginApp, defaultRouteMap, defaultSlotMap, defaultWidgetMap } from '@openedx/frontend-base-compat';
+import allEnvConfig from './src/env.config.all.jsx';
 
 import '@openedx/frontend-base/shell/style';
 import '@edx/brand/core.min.css';
 import '@edx/brand/light.min.css';
+
+const routeMap = { ...defaultRouteMap, ...{} };
+const slotMap = { ...defaultSlotMap, ...{} };
+const widgetMap = { ...defaultWidgetMap, ...{} };
+
+const legacyPluginApp = createLegacyPluginApp({
+  appId: 'io.edly.frontend.app.compat',
+  envConfig: allEnvConfig,
+  routeMap,
+  slotMap,
+  widgetMap,
+});
 
 const siteConfig: SiteConfig = {
   siteId: 'frontend-template-site',
@@ -26,6 +40,7 @@ const siteConfig: SiteConfig = {
     learnerDashboardApp,
     instructorDashboardApp,
     notificationsApp,
+    legacyPluginApp
   ],
   externalRoutes: [
     {
@@ -42,6 +57,7 @@ const siteConfig: SiteConfig = {
     },
   ],
 
+  runtimeConfigJsonUrl: '/api/frontend_site_config/v1/',
   accessTokenCookieName: 'edx-jwt-cookie-header-payload',
 };
 
